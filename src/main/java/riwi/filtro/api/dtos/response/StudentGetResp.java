@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentResp {
+public class StudentGetResp {
     private Long id;
     private String name;
     private String email;
