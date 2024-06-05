@@ -21,5 +21,4 @@ public class LessonResp {
     private LocalDateTime created_at;
     private Boolean active;
     private List<MultimediaBasicResp> multimedias;
-    private ClassToLessonResp clase;
 }

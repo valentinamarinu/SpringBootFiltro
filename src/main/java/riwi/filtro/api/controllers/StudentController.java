@@ -1,13 +1,10 @@
 package riwi.filtro.api.controllers;
 
-import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.ErrorResponse;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,17 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.PatchExchange;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.AllArgsConstructor;
-import riwi.filtro.api.dtos.request.ClassReq;
 import riwi.filtro.api.dtos.request.StudentReq;
-import riwi.filtro.api.dtos.response.ClassBasicResp;
-import riwi.filtro.api.dtos.response.ClassGetResp;
 import riwi.filtro.api.dtos.response.StudentBasicResp;
 import riwi.filtro.api.dtos.response.StudentGetResp;
 import riwi.filtro.infraestructure.services.StudentService;
@@ -72,7 +65,7 @@ public class StudentController {
     }
 
     @Operation(summary = "Desabilita un estudiante específico.", description = "Debes ingresar el id del estudiante que deseas deshabilitar")
-    @PatchMapping(path = "/{id}")
+    @PatchMapping(path = "/{id}/disable")
     public ResponseEntity<StudentBasicResp> disable(
         @PathVariable Long id) {
     return ResponseEntity.ok(this.service.disable(id));
