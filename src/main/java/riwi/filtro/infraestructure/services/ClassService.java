@@ -39,8 +39,8 @@ public class ClassService {
     }
 
     public ClassBasicResp create(ClassReq request) {
-        ClassEntity clase = this.requestToEntity(request);
-
+        ClassEntity clase = requestToEntity(request);
+        
         clase.setLessons(new ArrayList<>());
         clase.setStudents(new ArrayList<>());
 
@@ -86,11 +86,6 @@ public class ClassService {
 
     private ClassEntity requestToEntity(ClassReq request) {
 
-        System.out.println(ClassEntity.builder()
-        .name(request.getName())
-        .description(request.getDescription())
-        .active(request.getActive())
-        .build());
         return ClassEntity.builder()
                 .name(request.getName())
                 .description(request.getDescription())
