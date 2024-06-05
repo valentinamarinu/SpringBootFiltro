@@ -1,11 +1,6 @@
 package riwi.filtro.api.dtos.request;
 
-import java.time.LocalDateTime;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -29,11 +24,6 @@ public class StudentReq {
     @NotBlank(message = "El email del estudiante es requerido.")
     @Size( max = 255, message = "La longitud del email no debe exceder los 255 caracteres.")
     private String email;
-
-    @NotNull(message = "La fecha del estudiante es requerida.")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @FutureOrPresent(message = "La fecha de creación del estudiante no puede ser antes a la fecha y hora actual.")
-    private LocalDateTime created_at;
 
     @NotNull(message = "El estado del estudiante es requerido.")
     private Boolean active;

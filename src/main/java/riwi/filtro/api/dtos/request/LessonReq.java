@@ -1,10 +1,5 @@
 package riwi.filtro.api.dtos.request;
 
-import java.time.LocalDateTime;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -26,11 +21,6 @@ public class LessonReq {
 
     @NotBlank(message = "El contenido de la lección es requerido.")
     private String content;
-    
-    @NotNull(message = "La fecha de creación de la lección es requerida.")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @FutureOrPresent(message = "La fecha de creación de la lección no puede ser antes a la fecha y hora actual.")
-    private LocalDateTime created_at;
 
     @NotNull(message = "El estado de la lección es requerido.")
     private Boolean active;

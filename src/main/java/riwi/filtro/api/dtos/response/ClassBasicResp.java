@@ -1,7 +1,6 @@
 package riwi.filtro.api.dtos.response;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,12 +13,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClassResp {
+public class ClassBasicResp {
     private Long id;
     private String name;
     private String description;
     private LocalDateTime created_at;
     private Boolean active;
-    private List<StudentBasicResp> students;
-    private List<LessonToClassResp> lessons;
 }
