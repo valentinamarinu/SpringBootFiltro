@@ -38,8 +38,8 @@ public class LessonEntity {
     @Column(nullable = false)
     private String content;
 
-    @Column(nullable = false, columnDefinition = "TIMESTAMP")
-    private LocalDateTime created_at;
+    @Builder.Default
+    private LocalDateTime created_at = LocalDateTime.now();
 
     @Column(nullable = false)
     private Boolean active;
