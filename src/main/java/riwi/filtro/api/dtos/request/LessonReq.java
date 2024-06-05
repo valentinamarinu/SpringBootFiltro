@@ -1,5 +1,7 @@
 package riwi.filtro.api.dtos.request;
 
+import java.util.List;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -27,4 +29,6 @@ public class LessonReq {
 
     @NotNull(message = "El id de la clase es requerido.")
     private Long class_id;
+
+    private List<MultimediaReq> multimedias;
 }
